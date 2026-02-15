@@ -1,0 +1,123 @@
+ span {
+     margin: 0px;
+ }
+
+ .body {
+     display: flex;
+     flex-direction: column;
+     gap: 0px;
+ }
+
+ * {
+     margin: 0px;
+     padding: 0px;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+
+ .firstnav9 {
+     background-color: #9395D3;
+     color: white;
+     height: 118px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+ }
+
+ .logo {
+     padding-left: 20px;
+
+ }
+
+ .icons22 {
+     font-size: 30px;
+     margin-right: 20px;
+ }
+
+ .icons1 {
+     margin-top: 0px;
+     margin-bottom: 0px;
+     font-size: 30px;
+     padding: 0px;
+ }
+
+ .secondnav {
+     margin: 0px;
+     height: 56px;
+     display: flex;
+     justify-content: space-around;
+ }
+
+ .align {
+     display: flex;
+     flex-direction: column;
+     gap: 0px;
+     align-items: center;
+     cursor: pointer;
+ }
+
+ .actualbody {
+     background-color: #a8aac7;
+     height: 100vh;
+     margin: 0px;
+     width: 100%;
+     margin: 0px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 20px;
+ }
+
+ .add {
+     background-color: #9395D3;
+     height: 70px;
+     width: 70px;
+     border-radius: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: white;
+     border: none;
+     cursor: pointer;
+     position: fixed;
+     margin-left: 1800px;
+     margin-top: 590px;
+ }
+
+ ul {
+     display: flex;
+     gap: 10px;
+     align-items: center;
+ }
+
+ .box {
+     width: 60%;
+     border-radius: 10px;
+     display: flex;
+     justify-content: center;
+     gap: 70%;
+     background-color: white;
+     height: 90px;
+     align-items: center;
+     margin-top: 20px;
+
+ }
+
+ .box-icons {
+     color: #9395D3;
+     font-size: x-large;
+     cursor: pointer;
+     gap: 50px;
+     list-style: none;
+ }
+
+ .headings {
+     display: flex;
+     flex-direction: column;
+
+     gap: 10px;
+ }
+
+ .purple {
+     color: #9395D3;
+ }

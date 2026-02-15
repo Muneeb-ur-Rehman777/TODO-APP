@@ -1,0 +1,80 @@
+ span {
+     margin: 0px;
+ }
+
+ .body {
+     display: flex;
+     flex-direction: column;
+     gap: 0px;
+ }
+
+ * {
+     margin: 0px;
+     padding: 0px;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+
+ .firstnav49 {
+     background-color: #9395D3;
+     color: white;
+     height: 118px;
+     display: flex;
+     align-items: center;
+     gap: 20px;
+
+ }
+
+ .logo {
+     padding-left: 20px;
+
+ }
+
+ 
+
+
+ 
+
+
+ .actualbody {
+     background-color: #a8aac7;
+     height: 100vh;
+     margin: 0px;
+     width: 100%;
+     margin: 0px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 20px;
+ }
+
+
+
+ .box1 {
+     width: 50%;
+     border-radius: 10px;
+     display: flex;
+     justify-content: flex-start;
+     background-color: white;
+     height: 90px;
+     align-items: center;
+     margin-top: 20px;
+ }
+
+ .box-icons {
+     color: #9395D3;
+     font-size: x-large;
+     cursor: pointer;
+     gap: 50px;
+     list-style: none;
+ }
+
+ .headings1 {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     margin-left: 100px;
+ }
+
+ .purple {
+     color: #9395D3;
+ }
