@@ -47,12 +47,23 @@ const Todo = () => {
     navi('/EDITTASK', { state: { task } })
   }
 
-  function DELE(task) {
+ async function DELE(task) {
+
+    let response = await fetch(`http://localhost:3000/delete/${task.id}`, {
+      method: "DELETE"
+    });
+
+
+    let data = await response.json();
+    console.log(data);
+
+
+
 
     const updatedTasks = array.filter(obj => obj.id !== task.id);
 
     localStorage.setItem("user", JSON.stringify(updatedTasks))
-    
+
     setarray1(updatedTasks)
 
 
@@ -63,22 +74,30 @@ const Todo = () => {
 
 
 
-  
-  function complete(obj) {
+
+  async function complete(obj) {
+
+    let response = await fetch(`http://localhost:3000/transfer/${obj.id}`,{
+      method:"DELETE"
+    })
+
+    let data = await response.json();
+    console.log(data)
 
 
-    let previous = JSON.parse(localStorage.getItem("completedtasks"))  || []
+
+    let previous = JSON.parse(localStorage.getItem("completedtasks")) || []
     // localStorage.removeItem("completedtasks") 
 
-    for(let object of array){
-      if(object.id==obj.id){
-        let newarrr= [...previous,object]
-        localStorage.setItem('completedtasks',JSON.stringify(newarrr))
+    for (let object of array) {
+      if (object.id == obj.id) {
+        let newarrr = [...previous, object]
+        localStorage.setItem('completedtasks', JSON.stringify(newarrr))
       }
     }
 
 
-    
+
 
 
 

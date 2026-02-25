@@ -26,11 +26,23 @@ const Taskadd = () => {
         navi(-1)
     }
 
-    function backtodashbooard() {
+    async function backtodashbooard() {
         // const newarr = [...Fulldata, task]
         // setFulldata(newarr);
         // localStorage.setItem("user"[count],JSON.stringify(task))
         // count++
+
+        let response = await fetch("http://localhost:3000/add", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(task)
+        });
+
+        let data = await response.json();
+        console.log(data);
+        
 
         let count = localStorage.length
         if (count > 0) {
