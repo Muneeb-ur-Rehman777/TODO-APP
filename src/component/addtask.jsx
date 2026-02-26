@@ -5,11 +5,8 @@ import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 const Taskadd = () => {
     const navi = useNavigate()
-    let count = 1
 
 
-
-    const [Fulldata, setFulldata] = useState([])
     const [task, setTask] = useState({ Title: "", description: "" });
 
     function submit(e) {
@@ -27,10 +24,6 @@ const Taskadd = () => {
     }
 
     async function backtodashbooard() {
-        // const newarr = [...Fulldata, task]
-        // setFulldata(newarr);
-        // localStorage.setItem("user"[count],JSON.stringify(task))
-        // count++
 
         let response = await fetch("http://localhost:3000/add", {
             method: "POST",
@@ -41,25 +34,9 @@ const Taskadd = () => {
         });
 
         let data = await response.json();
-        console.log(data);
-        
-
-        let count = localStorage.length
-        if (count > 0) {
-            let user = JSON.parse(localStorage.getItem("user"))
-            let newarrayyy = [...user, task]
-            localStorage.setItem("user", JSON.stringify(newarrayyy))
-        }
-        else {
-            let newarrayyy = [task]
-            localStorage.setItem("user", JSON.stringify(newarrayyy))
-        }
-
-
-        count++
+        console.log(data);  
+      
         navi('/');
-
-
     }
 
 

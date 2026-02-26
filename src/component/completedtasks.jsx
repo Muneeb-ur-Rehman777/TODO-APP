@@ -1,32 +1,34 @@
 import './comletedtasks.css'
 import { useEffect, useState } from 'react'
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { data, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { BiLeftArrow } from 'react-icons/bi';
 import React from 'react'
 const Completedtasks = () => {
 
-    let navi = useNavigate()
-    let [array, setarray] = useState(JSON.parse(localStorage.getItem("completedtasks")) || [])
+    let navi = useNavigate();
+    const [data, setData] = useState([])
+
 
     useEffect(() => {
-        async function get() {
+        async function getData() {
             let response = await fetch("http://localhost:3000/completedTasks", {
                 method: "GET"
             })
 
-            let data = await response.json()
+            let result= await response.json()
+            setData(result)
             console.log(data)
-            setarray(data)
         }
-        get()
+        getData()
 
     }, [])
+
 
     function back() {
         navi('/')
     }
 
-    
+
 
 
 
@@ -41,7 +43,7 @@ const Completedtasks = () => {
                 <div className='actualbody'>
                     {/* <button onClick={shoooow}>clickme</button> */}
                     {
-                        array.map((obj) => (
+                        data.map((obj) => (
                             <div className='box1'>
                                 <div className='headings1'>
                                     <h2 className='purple'>{obj.Title}</h2>

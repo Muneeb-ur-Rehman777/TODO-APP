@@ -5,13 +5,13 @@ import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 
 const EDITTASK = () => {
     let navi = useNavigate()
-    let location = useLocation()
+    let location = useLocation()    
     let selectedtask = location.state.task
-    console.log(selectedtask)
+    
 
-    const [wholefunction, setwholefunction] = useState(JSON.parse(localStorage.getItem("user")))
 
     const [update, setupdate] = useState({ Title: "", description: "" })
+
     function submit(e) {
         const { name, value } = e.target;
         setupdate((prev) => ({
@@ -26,6 +26,9 @@ const EDITTASK = () => {
     }
 
    async function updatee() {
+    selectedtask.Title = update.Title
+    selectedtask.description = update.description
+
 
         let response = await fetch(`http://localhost:3000/update/${selectedtask.id}`, {
             method: "PUT",
@@ -38,18 +41,6 @@ const EDITTASK = () => {
         let data = await response.json()
         console.log(data)
 
-        const updatedTasks = wholefunction.map(task => {
-            if (task.id == selectedtask.id) {
-                return { ...task, ...update };
-            }
-            return task;
-        });
-
-
-        setwholefunction(updatedTasks)
-
-
-        localStorage.setItem("user", JSON.stringify(updatedTasks))
 
         navi("/")
 
@@ -63,7 +54,7 @@ const EDITTASK = () => {
             </div>
             <div className='body12'>
                 <input type="text" placeholder='Title' name='Title' onChange={submit} className='in' />
-                <input type="text" placeholder='Detail' name='description' onChange={submit} className='in' />
+                <input type="text" placeholder='Detail' name='description' onChange={submit} className='in'/>
                 <div className='buttons'>
                     <button onClick={updatee} className='btn1'>UPDATE</button>
                     <button onClick={back} className='btn2'>CANCEL</button>
