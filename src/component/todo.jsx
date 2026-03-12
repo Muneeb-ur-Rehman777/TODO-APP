@@ -21,13 +21,13 @@ const Todo = () => {
   useEffect(() => {
 
     async function getData() {
-      let response = await fetch('http://localhost:3000', {
+      let response = await fetch('http://localhost:3000/doahs', {
         method: "GET"
       })
 
       let result = await response.json() || []
       setData(result)
-      console.log(data)
+      console.log(result)
     };
 
     getData();

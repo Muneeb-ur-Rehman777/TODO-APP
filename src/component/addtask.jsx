@@ -14,7 +14,7 @@ const Taskadd = () => {
         setTask((prev) => ({
             ...prev,
             [name]: value,
-            id: Date.now(), // unique id
+            id: Date.now(), 
             date: new Date().toString()
         }));
     }
@@ -36,7 +36,7 @@ const Taskadd = () => {
         let data = await response.json();
         console.log(data);  
       
-        navi('/');
+    navi('/ ');
     }
 
 

@@ -26,6 +26,7 @@ const EDITTASK = () => {
     }
 
    async function updatee() {
+
     selectedtask.Title = update.Title
     selectedtask.description = update.description
 
@@ -40,7 +41,6 @@ const EDITTASK = () => {
 
         let data = await response.json()
         console.log(data)
-
 
         navi("/")
 
